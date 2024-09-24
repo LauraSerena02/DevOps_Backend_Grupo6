@@ -59,8 +59,8 @@ const createUser = async (req, res) => {
             return res.status(400).json({ error: 'El contenido no está completo' });
         }
 
-       
         const user= {userName, userLastName, typeId, idNumber, email, countryId, password, phone};
+
         const hashedPassword = await hashPassword(password);
         user.password = hashedPassword;
 

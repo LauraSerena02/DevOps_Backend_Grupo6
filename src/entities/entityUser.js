@@ -10,28 +10,29 @@ const user = new EntitySchema({
             generated: true,
  
         },
-        countryId: {
-            type: "int"
-        },
-        typeId: {
-            type: "int"
-        },
-        userName:{
+              userName: {
             type: "varchar"
         },
+        userLastName: {
+            type: "varchar"
+        },
+        typeId:{
+            type: "int"
+        },
 
-        userLastName:{
+        idNumber:{
             type: "varchar"
         },
         email: {
             type: "varchar",
  
         },
-        password: {
-            type: "varchar",
+        countryId: {
+            type: "int",
  
         },
-        idNumber: {
+        password: {
+
             type: "varchar",
  
         },

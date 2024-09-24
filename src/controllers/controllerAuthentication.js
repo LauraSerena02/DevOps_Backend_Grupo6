@@ -51,16 +51,16 @@ const login = async (req, res) => {
 const createUser = async (req, res) => {
     try {
         const data = req.body
-        const {countryId, typeId, userName, userLastName, email, password, idNumber, phone } = data;
+        const {userName, userLastName, typeId, idNumber, email, countryId, password, phone} = data;
         
 
         // Verificar que todos los campos necesarios están presentes
-        if (!countryId || !typeId || !userName || !userLastName || !email|| !password || !idNumber || !phone) {
+        if (!userName|| !userLastName || !typeId || !idNumber || !email|| !countryId || !password || !phone) {
             return res.status(400).json({ error: 'El contenido no está completo' });
         }
 
-       
-        const user= {countryId, typeId, userName, userLastName, email, password, idNumber, phone};
+        const user= {userName, userLastName, typeId, idNumber, email, countryId, password, phone};
+
         const hashedPassword = await hashPassword(password);
         user.password = hashedPassword;
 

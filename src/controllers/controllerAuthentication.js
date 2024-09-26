@@ -80,7 +80,7 @@ const createUser = async (req, res) => {
         const repositorio = dataSource.getRepository("user");
         
         await repositorio.save(user)
-        res.json({ msg: "usuario agregado", countryName: countryEntity.countryName });
+        res.json({ msg: "usuario agregado"});
 
     } catch (error) {
         console.error('Error al agregar el usuario:', error);

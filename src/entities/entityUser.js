@@ -10,7 +10,7 @@ const user = new EntitySchema({
             generated: true,
  
         },
-              userName: {
+        userName: {
             type: "varchar"
         },
         userLastName: {

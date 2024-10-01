@@ -93,6 +93,15 @@ CREATE TABLE tblIncome (
 	FOREIGN KEY (incomeMethodPaymentId) REFERENCES tblIncomeMethodPayment(incomeMethodPaymentId)
 );
 
+CREATE TABLE tblToken(
+	tokenId INT AUTO_INCREMENT PRIMARY KEY,
+	email VARCHAR(100) NOT NULL UNIQUE,
+    tokenInfo TEXT NOT NULL,
+    tokenExpirationDate DATETIME NOT NULL,
+    FOREIGN KEY (email) REFERENCES tblUser(email)
+);
+
+
 INSERT INTO tblCountry (countryId, countryName) VALUES
 (1, "Colombia"),
 (2, "México"),

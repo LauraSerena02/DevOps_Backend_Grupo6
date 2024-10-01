@@ -3,6 +3,7 @@ var typeorm = require("typeorm");
 const identification = require("./entities/entityIdentificationType");
 const country = require('./entities/entityCountry');
 const user = require('./entities/entityUser');
+const token = require('./entities/entityToken');
 const dotenv = require('dotenv');
 
 
@@ -17,7 +18,7 @@ var dataSource = new typeorm.DataSource({
     password: process.env.password,
     database: process.env.database,
     synchronize: false,
-    entities: [user, country, identification]
+    entities: [user, country, identification, token]
 });
 
 //Funcion de conexion a la base de datos

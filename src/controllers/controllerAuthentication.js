@@ -62,7 +62,7 @@ const createUser = async (req, res) => {
         const user= {userName, userLastName, typeId, idNumber, email, countryId, password, phone};
 
         const hashedPassword = await hashPassword(password);
-        user.password = hashedPassword;
+        user.password = hashedPassword; //Columna de la tabla
 
         const identificationRepository = dataSource.getRepository(identification)
         const identificationEntity = await identificationRepository.findOne({ where: { typeId: typeId } });

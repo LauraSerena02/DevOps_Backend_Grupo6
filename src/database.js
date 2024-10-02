@@ -1,5 +1,5 @@
 //Instanciamiento de todos los modulos necesarios
-const typeorm = require("typeorm");
+var typeorm = require("typeorm");
 const identification = require("./entities/entityIdentificationType");
 const country = require('./entities/entityCountry');
 const user = require('./entities/entityUser');
@@ -10,7 +10,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 //Instancia de DataSource de typeorm con la configuración  para conectarse a una base de datos MySQL.
-const dataSource = new typeorm.DataSource({
+var dataSource = new typeorm.DataSource({
     type: "mysql",
     host: process.env.host,
     port: process.env.portdb,

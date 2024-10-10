@@ -40,6 +40,9 @@ const user = new EntitySchema({
             type: "varchar",
  
         },
+        photoUser: {
+            type: "varchar"
+        }
 
     },
  

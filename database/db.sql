@@ -59,6 +59,7 @@ CREATE TABLE tblUser (
     countryId INT,
     password VARCHAR(100) NOT NULL,
     phone VARCHAR(50) NOT NULL,
+    photoUser VARCHAR(255),
 	FOREIGN KEY (typeId) REFERENCES tblIdentificationType(typeId),
     FOREIGN KEY (countryId) REFERENCES tblCountry(countryId)
     
@@ -118,3 +119,21 @@ INSERT INTO tblIdentificationType (typeId,  idDescription) VALUES
 (4, "Cédula de Extranjería (CE)"),
 (5, "Carné de Identidad (CI)"),
 (6, "Documento Nacional de Identidad (DNI)");
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (1, 'Ahorrar es la berraquera', 'Guarde plata mes a mes, asi sea poquito.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728788627/Imagen_2_ngogeq.jpg');
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (2, 'Tenga un colchoncito', 'Tenga un colchoncito pa cualquier eventualidad. ¡Eso es clave!', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728789364/Imagen_1_wucyxf.jpg');
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (3, 'No coma cuento de la prima', 'Cuando llegue la platica extra, no la gaste de una.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728789013/Imagen_4_gpt5wd.jpg');
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (4, 'Piensa en invertir', 'Mejor piensa en invertir o guardar para un proyecto más grande.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728788803/Imagen_3_zo5jen.jpg');
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (5, 'Pa ser cucho, mas vale ahorrar', 'Si quiere llegar a la vejez tranquilo.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728789259/Imagen_5_bykxbf.jpg');
+
+
+

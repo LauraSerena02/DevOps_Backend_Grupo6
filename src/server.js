@@ -31,3 +31,6 @@ app.use('/identification', require('./routes/identification'));
 app.use('/requestReset', require('./routes/sendemail'));
 app.use('/reset', require('./routes/resetPassword'));
 app.use('/tip', require('./routes/tip'));
+app.use('/incomeCategory', require('./routes/incomeCategory'));
+app.use('/incomeMethodPayment', require('./routes/incomeMethodPayment'));
+app.use('/income', require('./routes/income'));

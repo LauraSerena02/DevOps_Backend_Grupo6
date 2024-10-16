@@ -4,7 +4,9 @@ const dotenv = require('dotenv');
 const user = require('../entities/entityUser');
 const country = require('../entities/entityCountry');
 const identification = require('../entities/entityIdentificationType');
+const jwt = require('jsonwebtoken');
 const cloudinary = require("../utils/cloudinary");
+const {generateToken} = require("../utils/jwt")
 
 
 dotenv.config();
@@ -43,8 +45,10 @@ const login = async (req, res) => {
             return res.status(401).json({ error: 'Contraseña incorrecta' });
         }
 
+        const userToken = generateToken({userId : user.userId}) 
+        
         // Si el email y la contraseña es correcta, enviar mensaje de éxito 
-        res.json({ message: 'Login exitoso'});
+        res.json({ message: 'Login exitoso', userToken});
     } catch (error) {
         console.error('Error al realizar el login:', error);
         res.status(500).json({ error: 'Error al realizar el login' });
@@ -93,6 +97,7 @@ const createUser = async (req, res) => {
 
 const getUserProfile = async (req, res) => {
     try {
+        //Frontend devuelve el user ID decodificado como parametro
         const userId = req.params.userId; // ID pasado como parámetro
         const userRepository = dataSource.getRepository("user");
         
@@ -133,7 +138,8 @@ const getUserProfile = async (req, res) => {
 
 const updateUser = async (req, res) => {
     try {
-        const userId = req.params.userId; // ID del usuario de los parámetros de la URL
+        //Deben mandar el token por cabecera authorization
+        const userId = jwt.decode(req.headers["authorization"]).userId; // ID del usuario de los parámetros de la URL
         const data = req.body;
         const { userName, userLastName, typeId, idNumber, email, countryId, password, phone } = data;
         

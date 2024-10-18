@@ -135,5 +135,29 @@ VALUES (4, 'Piensa en invertir', 'Mejor piensa en invertir o guardar para un pro
 INSERT INTO tblTip (tipID, title, content, photo) 
 VALUES (5, 'Pa ser cucho, mas vale ahorrar', 'Si quiere llegar a la vejez tranquilo.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728789259/Imagen_5_bykxbf.jpg');
 
+INSERT INTO tblIncomeCategory (incomeCategoryId, incomeName) VALUES
+(1, "Sueldo o salario"),
+(2, "Honorarios"),
+(3, "Comisiones"),
+(4, "Alquiler de propiedades"),
+(5, "Intereses"),
+(6, "Dividendos"),
+(7, "Ventas de productos"),
+(8, "Servicios prestados"),
+(9, "Venta de activos"),
+(10, "Premios/loterías"),
+(11, "Bonos"),
+(12, "Herencias"),
+(13, "Reembolsos"),
+(14, "Regalías"),
+(15, "Seguros"),
+(16, "Criptomonedas"),
+(17, "Inversiones");
+
+INSERT INTO tblIncomeMethodPayment (incomeMethodPaymentId, incomeMethodPaymentName) VALUES
+(1, "Transferencia bancaria"),
+(2, "Cheque"),
+(3, "Efectivo"),
+(4, "Transaccion electronica");
 
 

@@ -59,6 +59,7 @@ CREATE TABLE tblUser (
     countryId INT,
     password VARCHAR(100) NOT NULL,
     phone VARCHAR(50) NOT NULL,
+    photoUser VARCHAR(255),
 	FOREIGN KEY (typeId) REFERENCES tblIdentificationType(typeId),
     FOREIGN KEY (countryId) REFERENCES tblCountry(countryId)
     
@@ -93,6 +94,15 @@ CREATE TABLE tblIncome (
 	FOREIGN KEY (incomeMethodPaymentId) REFERENCES tblIncomeMethodPayment(incomeMethodPaymentId)
 );
 
+CREATE TABLE tblToken(
+	tokenId INT AUTO_INCREMENT PRIMARY KEY,
+	email VARCHAR(100) NOT NULL UNIQUE,
+    tokenInfo TEXT NOT NULL,
+    tokenExpirationDate DATETIME NOT NULL,
+    FOREIGN KEY (email) REFERENCES tblUser(email)
+);
+
+
 INSERT INTO tblCountry (countryId, countryName) VALUES
 (1, "Colombia"),
 (2, "México"),
@@ -109,3 +119,45 @@ INSERT INTO tblIdentificationType (typeId,  idDescription) VALUES
 (4, "Cédula de Extranjería (CE)"),
 (5, "Carné de Identidad (CI)"),
 (6, "Documento Nacional de Identidad (DNI)");
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (1, 'Ahorrar es la berraquera', 'Guarde plata mes a mes, asi sea poquito.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728788627/Imagen_2_ngogeq.jpg');
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (2, 'Tenga un colchoncito', 'Tenga un colchoncito pa cualquier eventualidad. ¡Eso es clave!', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728789364/Imagen_1_wucyxf.jpg');
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (3, 'No coma cuento de la prima', 'Cuando llegue la platica extra, no la gaste de una.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728789013/Imagen_4_gpt5wd.jpg');
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (4, 'Piensa en invertir', 'Mejor piensa en invertir o guardar para un proyecto más grande.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728788803/Imagen_3_zo5jen.jpg');
+
+INSERT INTO tblTip (tipID, title, content, photo) 
+VALUES (5, 'Pa ser cucho, mas vale ahorrar', 'Si quiere llegar a la vejez tranquilo.', 'https://res.cloudinary.com/dzv9wocfd/image/upload/v1728789259/Imagen_5_bykxbf.jpg');
+
+INSERT INTO tblIncomeCategory (incomeCategoryId, incomeName) VALUES
+(1, "Sueldo o salario"),
+(2, "Honorarios"),
+(3, "Comisiones"),
+(4, "Alquiler de propiedades"),
+(5, "Intereses"),
+(6, "Dividendos"),
+(7, "Ventas de productos"),
+(8, "Servicios prestados"),
+(9, "Venta de activos"),
+(10, "Premios/loterías"),
+(11, "Bonos"),
+(12, "Herencias"),
+(13, "Reembolsos"),
+(14, "Regalías"),
+(15, "Seguros"),
+(16, "Criptomonedas"),
+(17, "Inversiones");
+
+INSERT INTO tblIncomeMethodPayment (incomeMethodPaymentId, incomeMethodPaymentName) VALUES
+(1, "Transferencia bancaria"),
+(2, "Cheque"),
+(3, "Efectivo"),
+(4, "Transaccion electronica");
+
+

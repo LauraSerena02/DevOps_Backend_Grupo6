@@ -1,15 +1,19 @@
 //Instanciamiento de todos los modulos necesarios
-var typeorm = require("typeorm");
+const typeorm = require("typeorm");
 const identification = require("./entities/entityIdentificationType");
 const country = require('./entities/entityCountry');
 const user = require('./entities/entityUser');
+const token = require('./entities/entityToken');
+const tip= require('./entities/entityTip');
+const income =require ('./entities/entityIncome')
 const dotenv = require('dotenv');
-
+const incomeCategory = require("./entities/entityIncomeCategory");
+const incomeMethodPayment = require("./entities/entityincomeMethodPayment");
 
 dotenv.config();
 
 //Instancia de DataSource de typeorm con la configuración  para conectarse a una base de datos MySQL.
-var dataSource = new typeorm.DataSource({
+const dataSource = new typeorm.DataSource({
     type: "mysql",
     host: process.env.host,
     port: process.env.portdb,
@@ -17,7 +21,7 @@ var dataSource = new typeorm.DataSource({
     password: process.env.password,
     database: process.env.database,
     synchronize: false,
-    entities: [user, country, identification]
+    entities: [user, country, identification, token, tip, incomeCategory, incomeMethodPayment, income]
 });
 
 //Funcion de conexion a la base de datos

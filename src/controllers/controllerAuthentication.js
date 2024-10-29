@@ -6,7 +6,7 @@ const country = require('../entities/entityCountry');
 const identification = require('../entities/entityIdentificationType');
 const jwt = require('jsonwebtoken');
 const cloudinary = require("../utils/cloudinary");
-const {generateToken} = require("../utils/jwt")
+const {generateToken, decodeToken} = require("../utils/jwt")
 
 
 dotenv.config();
@@ -97,8 +97,12 @@ const createUser = async (req, res) => {
 
 const getUserProfile = async (req, res) => {
     try {
-        //Frontend devuelve el user ID decodificado como parametro
-        const userId = req.params.userId; // ID pasado como parámetro
+       //Frontend devuelve el user ID decodificado como parametro
+        console.log("entre a la API");
+        const token = req.params.token; // ID pasado como parámetro
+        const decode = decodeToken(token);
+        console.log(token);
+        const  userId = decode.userId;
         const userRepository = dataSource.getRepository("user");
         
         const user = await userRepository.findOneBy({ userId });

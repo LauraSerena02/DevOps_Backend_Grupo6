@@ -8,7 +8,7 @@ const { login, createUser, getUserProfile, updateUser } = require('../controller
 // Ruta para iniciar sesión
 router.post('/login', login);
 router.post('/createUser', createUser);
-router.get('/getUserProfile/:userId', getUserProfile);
+router.get('/getUserProfile/:token', getUserProfile);
 router.post('/updateUser/',checkToken, upload.single('photo'), updateUser);
 
 module.exports = router;

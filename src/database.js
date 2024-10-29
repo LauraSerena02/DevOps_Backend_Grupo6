@@ -20,6 +20,7 @@ const dataSource = new typeorm.DataSource({
     username: process.env.usernamedb,
     password: process.env.password,
     database: process.env.database,
+    url: process.env.url,
     synchronize: false,
     entities: [user, country, identification, token, tip, incomeCategory, incomeMethodPayment, income]
 });

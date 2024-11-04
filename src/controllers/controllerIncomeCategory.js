@@ -13,7 +13,7 @@ const incomeCategories = async (req, res) => {
       res.status(200).json(incomeCategories);
     } catch (error) {
         // Si ocurre un error, lo registra en la consola 
-      console.error('Error al recuperar las categorias de ingresos', error);
+      //console.error('Error al recuperar las categorias de ingresos', error);
       // Envía una respuesta con el estado 500 y un mensaje de error
       res.status(500).json({ error: 'Error al recuperar las categorias de ingresos' });
     }

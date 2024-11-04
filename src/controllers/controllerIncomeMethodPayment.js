@@ -13,7 +13,7 @@ const incomeMethodPayments = async (req, res) => {
       res.status(200).json(incomeMethodPayments);
     } catch (error) {
         // Si ocurre un error, lo registra en la consola 
-      console.error('Error al recuperar los metodos de pago de ingresos', error);
+      //console.error('Error al recuperar los metodos de pago de ingresos', error);
       // Envía una respuesta con el estado 500 y un mensaje de error
       res.status(500).json({ error: 'Error al recuperar los metodos de pago de ingresos' });
     }

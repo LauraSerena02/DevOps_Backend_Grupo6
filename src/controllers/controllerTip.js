@@ -28,7 +28,7 @@ const showRandomTip = async (req, res) => {
 
         res.json(tip2[0]);
     } catch (error) {
-        console.error('Error al obtener la noticia:', error);
+        //console.error('Error al obtener la noticia:', error);
         res.status(500).json({ error: 'Error al obtener el consejo', details: error.message });
     }
 };

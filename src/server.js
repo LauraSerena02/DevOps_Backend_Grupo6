@@ -41,3 +41,6 @@ app.use('/tip', require('./routes/tip'));
 app.use('/incomeCategory', require('./routes/incomeCategory'));
 app.use('/incomeMethodPayment', require('./routes/incomeMethodPayment'));
 app.use('/income', require('./routes/income'));
+app.use('/expenseCategory', require('./routes/expenseCategory'))
+app.use('/expenseMethodPayment', require('./routes/expenseMethodPayment'));
+app.use('/expense', require('./routes/expense'));

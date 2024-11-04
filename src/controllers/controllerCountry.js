@@ -13,7 +13,7 @@ const countries = async (req, res) => {
       res.status(200).json(countries);
     } catch (error) {
         // Si ocurre un error, lo registra en la consola 
-      console.error('Error al recuperar los paises:', error);
+      //console.error('Error al recuperar los paises:', error);
       // Envía una respuesta con el estado 500 y un mensaje de error
       res.status(500).json({ error: 'Error al recuperar los paises' });
     }

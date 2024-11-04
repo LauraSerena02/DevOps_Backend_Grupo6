@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/compare/v1.0.0...v1.1.0) (2024-11-04)
+
+
+### Features
+
+* se implemento la decodificacion del token y conexion cors ([#17](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/issues/17)) ([bc06a3e](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/commit/bc06a3e78d23609b1ee5f3bc158d3bed59145ab7))
+
 ## 1.0.0 (2024-10-23)
 
 

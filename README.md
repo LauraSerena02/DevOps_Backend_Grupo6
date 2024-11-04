@@ -11,9 +11,9 @@ Instrucciones de instalación
   Cambie al directorio donde se desea almacenar el código fuente del repositorio. Por ejemplo:
   cd /ruta/del/directorio
 
-	Clone los repositorios: Clone cada repositorio necesario utilizando el comando git clone. 
+	Clonar los repositorios: Clone cada repositorio necesario utilizando el comando git clone. 
  
- 	Reemplace [URL_del_Repositorio] con la URL correspondiente.
+ 	Reemplazar [URL_del_Repositorio] con la URL correspondiente.
 
 	git clone [URL_del_Repositorio]
 

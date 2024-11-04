@@ -9,6 +9,9 @@ const income =require ('./entities/entityIncome')
 const dotenv = require('dotenv');
 const incomeCategory = require("./entities/entityIncomeCategory");
 const incomeMethodPayment = require("./entities/entityincomeMethodPayment");
+const expenseCategory = require("./entities/entityExpenseCategory");
+const expenseMethodPayment = require("./entities/entityExpenseMethodPayment");
+const expense =require ('./entities/entityExpense')
 
 dotenv.config();
 
@@ -20,8 +23,9 @@ const dataSource = new typeorm.DataSource({
     username: process.env.usernamedb,
     password: process.env.password,
     database: process.env.database,
+    url: process.env.url,
     synchronize: false,
-    entities: [user, country, identification, token, tip, incomeCategory, incomeMethodPayment, income]
+    entities: [user, country, identification, token, tip, incomeCategory, incomeMethodPayment, income, expenseCategory, expenseMethodPayment, expense]
 });
 
 //Funcion de conexion a la base de datos

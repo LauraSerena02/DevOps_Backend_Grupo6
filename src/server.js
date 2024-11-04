@@ -1,6 +1,7 @@
 const express = require ('express'); //Importar librerias
 const morgan = require ('morgan');
 const { connection } = require('./database');
+const cors = require('cors');
 
 
 const app = express(); //Creo un objeto para usar las funcionalidades de Express
@@ -23,6 +24,12 @@ app.set('port', process.env.portbackend || 3000); //Opción con variable de ento
 app.listen(process.env.portbackend || 3000, () => {
     console.log('servidor en el puerto', app.get('port'));
 });
+app.use(cors({
+    origin: 'http://localhost:5173', // Puedes usar '*' para permitir cualquier origen
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+    credentials: true // Si necesitas enviar cookies o encabezados de autenticación
+}));
+
 
 //Rutas
 app.use('/login', require('./routes/authentication'));
@@ -34,3 +41,6 @@ app.use('/tip', require('./routes/tip'));
 app.use('/incomeCategory', require('./routes/incomeCategory'));
 app.use('/incomeMethodPayment', require('./routes/incomeMethodPayment'));
 app.use('/income', require('./routes/income'));
+app.use('/expenseCategory', require('./routes/expenseCategory'))
+app.use('/expenseMethodPayment', require('./routes/expenseMethodPayment'));
+app.use('/expense', require('./routes/expense'));

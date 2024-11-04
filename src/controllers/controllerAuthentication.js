@@ -6,7 +6,7 @@ const country = require('../entities/entityCountry');
 const identification = require('../entities/entityIdentificationType');
 const jwt = require('jsonwebtoken');
 const cloudinary = require("../utils/cloudinary");
-const {generateToken} = require("../utils/jwt")
+const {generateToken, decodeToken} = require("../utils/jwt")
 
 
 dotenv.config();
@@ -97,14 +97,18 @@ const createUser = async (req, res) => {
 
 const getUserProfile = async (req, res) => {
     try {
-        //Frontend devuelve el user ID decodificado como parametro
-        const userId = req.params.userId; // ID pasado como parámetro
+       //Frontend devuelve el user ID decodificado como parametro
+        //console.log("entre a la API");
+        const token = req.params.token; // ID pasado como parámetro
+        const decode = decodeToken(token);
+        //console.log(token);
+        const  userId = decode.userId;
         const userRepository = dataSource.getRepository("user");
         
         const user = await userRepository.findOneBy({ userId });
 
         if (!user) {
-            console.error(`Usuario no encontrado: ID ${userId}`);
+            //console.error(`Usuario no encontrado: ID ${userId}`);
             return res.status(404).json({ message: 'Usuario no encontrado' });
         }
 
@@ -127,7 +131,7 @@ const getUserProfile = async (req, res) => {
             idDescription: identificationEntity ? identificationEntity.idDescription : null, // Accediendo a idDescription
     
         };
-        console.log(response)
+        //console.log(response)
         // Aquí el usuario incluye todos los atributos definidos en la entidad
         res.json(response);
     } catch (error) {
@@ -222,7 +226,7 @@ const updateUser = async (req, res) => {
             user.photoUser = null; // Si no actualiza es null
         }
         await userRepository.save(user);
-        res.json({ msg: "Usuario actualizado" });
+        return res.json({ msg: "Usuario actualizado" });
 
     } catch (error) {
         console.error('Error al actualizar el usuario:', error);

@@ -8,7 +8,17 @@ const generateToken = (data)=>{
     return token
 }
 
-module.exports = {generateToken}
+const decodeToken = (token) => {
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        return decoded; 
+    } catch (error) {
+        console.error('Error al decodificar el token:', error);
+        throw new Error('Token inválido');
+    }
+}
+
+module.exports = {generateToken, decodeToken}
 
 
 

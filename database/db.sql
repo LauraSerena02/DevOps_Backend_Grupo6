@@ -160,4 +160,23 @@ INSERT INTO tblIncomeMethodPayment (incomeMethodPaymentId, incomeMethodPaymentNa
 (3, "Efectivo"),
 (4, "Transaccion electronica");
 
+INSERT INTO tblExpenseCategory (expenseCategoryId, categoryName) VALUES
+(1, "Servicios"),
+(2, "Hogar"),
+(3, "Hijos"),
+(4, "Entretenimiento"),
+(5, "Transporte"),
+(6, "Mascota"),
+(7, "Cuidado personal"),
+(8, "Salud"),
+(9, "Alimentacion"),
+(10, "Finanzas"),
+(11, "Otros");
+
+INSERT INTO tblExpenseMethodPayment (expenseMethodPaymentId, expenseMethodPaymentName) VALUES
+(1, "Transferencia bancaria"),
+(2, "Cheque"),
+(3, "Efectivo"),
+(4, "Transaccion electronica");
+
 

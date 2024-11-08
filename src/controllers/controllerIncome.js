@@ -55,6 +55,8 @@ const getIncome = async (req, res) => {
 
         const {date, keyword} = req.query;
 
+        let whereClause = { userId };
+
         const incomeRepository = dataSource.getRepository(income);
 
         if(date){
@@ -63,15 +65,13 @@ const getIncome = async (req, res) => {
             const endDate = new Date(startDate);             
             endDate.setHours(23, 59, 59, 999)
             startDate.setHours(0, 0, 0, 0)
-            const incomes = await incomeRepository.find({ where: { userId, incomeDate: Between(startDate, endDate) } });
-            
-            return res.json(incomes);
+            whereClause.incomeDate = Between(startDate, endDate);
         }
 
-       
+
         
         // Obtener todos los ingresos asociados al userId
-        const incomes = await incomeRepository.find({ where: { userId } });
+        const incomes = await incomeRepository.find({ where:  whereClause  });
 
         if (incomes.length === 0) {
             return res.status(404).json({ message: 'No se encontraron ingresos para este usuario' });
@@ -144,7 +144,7 @@ const updateIncome = async (req, res) => {
         const data = req.body;
         const { incomeDate, incomeAmount, incomeCategoryId, incomeMethodPaymentId, incomeDescription} = data;
         
-        // Verificar que todos los campos obligatorios están presentes, excepto la contraseña
+        // Verificar que todos los campos obligatorios están presentes
         if (!incomeDate|| !incomeAmount || !incomeCategoryId || !incomeMethodPaymentId || !incomeDescription) {
             
 

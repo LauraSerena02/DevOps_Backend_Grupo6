@@ -54,6 +54,8 @@ const getExpense = async (req, res) => {
 
         const {date, keyword} = req.query;
 
+        let whereClause = { userId };
+
         const expenseRepository = dataSource.getRepository(expense);
 
         if(date){
@@ -62,15 +64,13 @@ const getExpense = async (req, res) => {
             const endDate = new Date(startDate);             
             endDate.setHours(23, 59, 59, 999)
             startDate.setHours(0, 0, 0, 0)
-            const expenses = await expenseRepository.find({ where: { userId, expenseDate: Between(startDate, endDate) } });
-            
-            return res.json(expenses);
+            whereClause.expenseDate = Between(startDate, endDate);
         }
 
        
         
         // Obtener todos los ingresos asociados al userId
-        const expenses = await expenseRepository.find({ where: { userId } });
+        const expenses = await expenseRepository.find({ where: whereClause });
 
         if (expenses.length === 0) {
             return res.status(404).json({ message: 'No se encontraron ingresos para este usuario' });

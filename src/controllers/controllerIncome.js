@@ -99,7 +99,9 @@ const getIncome = async (req, res) => {
                     incomeCategory: incomeCategoryEntity ? incomeCategoryEntity.incomeName : null,
                     incomeMethodPayment: incomeMethodPaymentEntity ? incomeMethodPaymentEntity.incomeMethodPaymentName : null,
                     incomeDescription: income.incomeDescription,
-                    type: "income"
+                    type: "income",
+                    incomeCategoryId: incomeCategoryEntity ? incomeCategoryEntity.incomeCategoryId: null,
+                    incomeMethodPaymentId: incomeMethodPaymentEntity ? incomeMethodPaymentEntity.incomeMethodPaymentId: null
                 };
 
                 

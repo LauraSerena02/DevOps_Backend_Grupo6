@@ -98,7 +98,9 @@ const getExpense = async (req, res) => {
                     expenseCategory: expenseCategoryEntity ? expenseCategoryEntity.categoryName : null,
                     expenseMethodPayment: expenseMethodPaymentEntity ? expenseMethodPaymentEntity.expenseMethodPaymentName : null,
                     expenseDescription: expense.expenseDescription,
-                    type: "expense"
+                    type: "expense",
+                    expenseCategoryId: expenseCategoryEntity ? expenseCategoryEntity.expenseCategoryId : null,
+                    expenseMethodPaymentId: expenseMethodPaymentEntity ? expenseMethodPaymentEntity.expenseMethodPaymentId: null
                 };
 
                 

@@ -1,7 +1,11 @@
 const { dataSource } = require('../database');
+const jwt = require('jsonwebtoken');
 
 const getFinancesByDateRange = async (req, res) => {
-  const { startDate, endDate, userId } = req.query;
+  
+  const userId = jwt.decode(req.headers["authorization"]).userId;
+  
+  const { startDate, endDate } = req.query;
 
   const query = `
     SELECT incomeDate AS date, incomeAmount AS amount, 'income' AS type

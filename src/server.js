@@ -35,7 +35,7 @@ app.use(cors({
 app.use('/login', require('./routes/authentication'));
 app.use('/country', require('./routes/country'));
 app.use('/identification', require('./routes/identification'));
-app.use('/requestReset', require('./routes/sendemail'));
+app.use('/requestReset', require('./routes/sendEmail'));
 app.use('/reset', require('./routes/resetPassword'));
 app.use('/tip', require('./routes/tip'));
 app.use('/incomeCategory', require('./routes/incomeCategory'));

@@ -1,7 +1,7 @@
 const { connection, dataSource } = require('../database');
 const dotenv = require('dotenv');
 const income =require('../entities/entityIncome')
-const incomeMethodPayment =require('../entities/entityincomeMethodPayment');
+const incomeMethodPayment =require('../entities/entityIncomeMethodPayment');
 const incomeCategory =require('../entities/entityIncomeCategory');
 const jwt = require('jsonwebtoken');
 

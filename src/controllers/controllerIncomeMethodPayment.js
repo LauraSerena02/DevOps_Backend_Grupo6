@@ -1,6 +1,6 @@
 // Importa el objeto de conexión a la base de datos y la entidad tipo de ingresos
 const { dataSource } = require('../database');
-const incomeMethodPayment =require('../entities/entityincomeMethodPayment');
+const incomeMethodPayment =require('../entities/entityIncomeMethodPayment');
 
 // Define una función asíncrona para manejar la solicitud de tipos de ingresos
 const incomeMethodPayments = async (req, res) => {

@@ -39,12 +39,15 @@ const findEmail = async (req, res) => {
         await repositorio.save(tokenEntity)
 
         // Enviar correo
-        const formUrl = 'http://localhost:5173/resetear-contraseña/' + tokenGenerate + "/" + email; //Enlace de la vista front-end
+        const formUrl = 'http://localhost:5173/changePassword/' + tokenGenerate + "/" + email; //Enlace de la vista front-end
         const emailOptions = {
-        from: 'pelcedevops@gmail.com',
+        from: 'pelcdevops@gmail.com',
         to: userEntity.email,
         subject: 'Recuperación de contraseña',
-        text: 'Haga clic en el siguiente enlace para recuperar su contraseña: ' + formUrl
+        html: `
+        <p>Haga clic en el siguiente enlace para recuperar su contraseña:</p>
+        <a href="${formUrl}">${formUrl}</a>
+        `
         
         };
          

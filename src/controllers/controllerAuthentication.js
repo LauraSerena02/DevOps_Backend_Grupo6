@@ -129,7 +129,8 @@ const getUserProfile = async (req, res) => {
             email: user.email,
             countryName: countryEntity ? countryEntity.countryName : null,// Nombre del país
             idDescription: identificationEntity ? identificationEntity.idDescription : null, // Accediendo a idDescription
-    
+            countryId: countryEntity ? countryEntity.countryId: null,
+            typeId: identificationEntity ? identificationEntity.typeId: null
         };
         //console.log(response)
         // Aquí el usuario incluye todos los atributos definidos en la entidad

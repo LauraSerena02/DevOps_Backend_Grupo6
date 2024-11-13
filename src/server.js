@@ -25,7 +25,7 @@ app.listen(process.env.portbackend || 3000, () => {
     console.log('servidor en el puerto', app.get('port'));
 });
 app.use(cors({
-    origin: 'http://localhost:5173', // Puedes usar '*' para permitir cualquier origen
+    origin: '*', // Puedes usar '*' para permitir cualquier origen
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
     credentials: true // Si necesitas enviar cookies o encabezados de autenticación
 }));

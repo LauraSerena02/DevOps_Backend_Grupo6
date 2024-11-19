@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/compare/v1.2.0...v1.3.0) (2024-11-19)
+
+
+### Features
+
+* change hour for UTC ([e12c16e](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/commit/e12c16e85a55e6f06de7f8544ec32df19bf47348))
+
 ## [1.2.0](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/compare/v1.1.0...v1.2.0) (2024-11-13)
 
 

@@ -63,6 +63,7 @@ const getExpense = async (req, res) => {
             const endDate = new Date(date);
             startDate.setUTCHours(0, 0, 0, 0); // Inicio del día en UTC
             endDate.setUTCHours(23, 59, 59, 999); // Final del día en UTC
+            whereClause.expenseDate = Between(startDate, endDate);
         }
 
        

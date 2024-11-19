@@ -71,7 +71,7 @@ const getFinancialSummary = async (req, res) => {
         }
 
         // Obtener el presupuesto desde req.body
-        const { budgetedExpense = 0 } = req.body;
+        const { budgetedExpense } = req.query;
 
         // Repositorios de ingresos y gastos
         const incomeRepository = dataSource.getRepository(income);

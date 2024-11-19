@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/compare/v1.4.0...v1.5.0) (2024-11-19)
+
+
+### Features
+
+* implement date filter with utc for income ([4ef7a6b](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/commit/4ef7a6bf2086b0e7ff3626b96ce107dc9b04cfeb))
+
 ## [1.4.0](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/compare/v1.3.0...v1.4.0) (2024-11-19)
 
 

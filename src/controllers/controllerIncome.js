@@ -61,10 +61,9 @@ const getIncome = async (req, res) => {
 
         if(date){
             const startDate = new Date(date);
-            startDate.setDate(startDate.getDate() + 1) 
-            const endDate = new Date(startDate);             
-            endDate.setHours(23, 59, 59, 999)
-            startDate.setHours(0, 0, 0, 0)
+            const endDate = new Date(date);
+            startDate.setUTCHours(0, 0, 0, 0); // Inicio del día en UTC
+            endDate.setUTCHours(23, 59, 59, 999); // Final del día en UTC
             whereClause.incomeDate = Between(startDate, endDate);
         }
 

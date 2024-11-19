@@ -59,11 +59,11 @@ const getExpense = async (req, res) => {
         const expenseRepository = dataSource.getRepository(expense);
 
         if(date){
+             // Crear las fechas iniciales basadas en la entrada
             const startDate = new Date(date);
-            startDate.setDate(startDate.getDate() + 1) 
-            const endDate = new Date(startDate);             
-            endDate.setHours(23, 59, 59, 999)
-            startDate.setHours(0, 0, 0, 0)
+            const endDate = new Date(date);
+            startDate.setUTCHours(0, 0, 0, 0); // Inicio del día en UTC
+            endDate.setUTCHours(23, 59, 59, 999); // Final del día en UTC
             whereClause.expenseDate = Between(startDate, endDate);
         }
 

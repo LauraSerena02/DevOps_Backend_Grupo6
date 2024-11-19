@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/compare/v1.3.0...v1.4.0) (2024-11-19)
+
+
+### Features
+
+* implement filter for utc hour ([f070ea9](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/commit/f070ea9d123d715a9d9e16a00a08a707af267f04))
+
 ## [1.3.0](https://github.com/LauraSerena02/DevOps_Backend_Grupo6/compare/v1.2.0...v1.3.0) (2024-11-19)
 
 

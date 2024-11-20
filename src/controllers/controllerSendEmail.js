@@ -39,7 +39,7 @@ const findEmail = async (req, res) => {
         await repositorio.save(tokenEntity)
 
         // Enviar correo
-        const formUrl = 'http://localhost:5173/changePassword/' + tokenGenerate + "/" + email; //Enlace de la vista front-end
+        const formUrl = 'https://devops-grupo6-fronted.onrender.com/changePassword/' + tokenGenerate + "/" + email; //Enlace de la vista front-end
         const emailOptions = {
         from: 'pelcdevops@gmail.com',
         to: userEntity.email,
